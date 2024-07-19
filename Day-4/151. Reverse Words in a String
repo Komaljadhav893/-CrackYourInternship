@@ -1,0 +1,23 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        vector<string>words;
+        istringstream iss(s);
+        string w;
+        //spliting input string
+          while (iss >> w) {
+        words.push_back(w);
+    }
+// Reverse the order of the words
+    std::reverse(words.begin(), words.end());
+    std::string result;
+    for (const auto& w : words) {
+        result += w + " ";
+    }
+
+    // Remove the trailing space
+    result.pop_back();
+
+    return result;
+    }
+};
